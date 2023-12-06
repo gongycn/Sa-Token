@@ -18,10 +18,15 @@
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 		<!-- 定义 Sa-Token 版本号 -->
 		<sa-token.version>1.35.0.RC</sa-token.version>
+		<hutool.version>5.8.20</hutool.version>
 	</properties>
 	
 	<dependencies>
 
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-jwt</artifactId>
+		</dependency>
 		<!-- SpringBoot依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,6 +80,18 @@
         
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-bom</artifactId>
+				<version>${hutool.version}</version>
+				<type>pom</type>
+				<!-- 注意这里是import -->
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 
 
